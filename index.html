@@ -15,13 +15,14 @@
 <meta property="og:site_name" content="E-Grafik Tasarım">
 <meta property="og:title" content="E-Grafik Tasarım | Markanızı Tasarımla Konuşturun">
 <meta property="og:description" content="Logo, kurumsal kimlik ve sosyal medya yönetimi. Yaratıcı grafik tasarım portfolyosu.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80">
+<meta property="og:image" content="https://www.egrafiktasarim.com/logo.png">
 <meta property="og:url" content="https://www.egrafiktasarim.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="E-Grafik Tasarım">
 <meta name="twitter:description" content="Logo, kurumsal kimlik ve sosyal medya yönetimi.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6a00'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='38' fill='%230a0a0a'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%27700%20270%20590%20630%27%3E%3Crect%20x%3D%27700%27%20y%3D%27270%27%20width%3D%27590%27%20height%3D%27630%27%20rx%3D%27120%27%20fill%3D%27%230a0a0a%27/%3E%3Cpath%20fill%3D%27%23ff5a05%27%20d%3D%27M995%20300L1215%20427L1142%20468L994%20383L818%20482L818%20605L947%20534L947%20616L820%20687L994%20788L1172%20688L1043%20616L1043%20533L1245%20645L1245%20732L993%20872L745%20728L745%20438Z%27/%3E%3Ccircle%20fill%3D%27%23ff5a05%27%20cx%3D%271210%27%20cy%3D%27524%27%20r%3D%2742%27/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -33,7 +34,8 @@
   "name": "E-Grafik Tasarım",
   "description": "Logo tasarımı, kurumsal kimlik ve sosyal medya yönetimi hizmetleri.",
   "url": "https://www.egrafiktasarim.com/",
-  "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80",
+  "image": "https://www.egrafiktasarim.com/logo.png",
+  "logo": "https://www.egrafiktasarim.com/logo.png",
   "sameAs": ["https://www.instagram.com/e_grafiktasarim/"],
   "areaServed": "TR",
   "knowsAbout": ["Grafik Tasarım","Logo Tasarımı","Sosyal Medya Yönetimi","Kurumsal Kimlik"]
@@ -89,8 +91,11 @@ h1,h2,h3,h4{font-weight:800;line-height:1.08;letter-spacing:-.02em;overflow-wrap
 .pre-mark .spin{transform-origin:100px 100px;animation:spin 12s linear infinite}
 .pre-mark .track{fill:none;stroke:var(--ln);stroke-width:2}
 .pre-mark .arc{fill:none;stroke:var(--or);stroke-width:3;stroke-linecap:round;transform:rotate(-90deg);transform-origin:100px 100px;filter:drop-shadow(0 0 6px rgba(255,106,0,.8))}
-.pre-mark .sq{fill:var(--or);transform-origin:100px 100px;transform:scale(0) rotate(-45deg);animation:pop .9s .2s var(--ease-out) forwards}
-.pre-mark .E{fill:none;stroke:var(--bk);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:120;stroke-dashoffset:120;animation:draw 1.1s .7s var(--ease) forwards}
+.pre-mark .lgp{fill:rgba(255,90,5,0);stroke:#ff5a05;stroke-width:9;stroke-linejoin:round;stroke-dasharray:3200;stroke-dashoffset:3200;animation:draw 1.4s .2s var(--ease) forwards,fillin .6s 1.3s forwards}
+.pre-mark .lgd{fill:#ff5a05;transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .6s 1.5s var(--ease-out) forwards}
+@keyframes fillin{to{fill:#ff5a05}}
+.pre-mark .old-sq{fill:var(--or);transform-origin:100px 100px;transform:scale(0) rotate(-45deg);animation:pop .9s .2s var(--ease-out) forwards}
+.pre-mark .old-E{fill:none;stroke:var(--bk);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:120;stroke-dashoffset:120;animation:draw 1.1s .7s var(--ease) forwards}
 @keyframes pop{to{transform:scale(1) rotate(0)}}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -124,7 +129,9 @@ header.nav.hide{transform:translateY(-100%)}
 .menu-open header.nav{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-color:transparent}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--nav-h)}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.02rem;line-height:1.1;position:relative;z-index:3}
-.brand-mark{flex:none;width:40px;height:40px;border-radius:11px;background:var(--or) center/cover;display:grid;place-items:center;color:var(--bk);font-weight:900;font-size:1.3rem;position:relative;overflow:hidden}
+.brand-mark .lg,.ig-av .lg{width:64%;height:64%;fill:var(--or)}
+.ig-av .lg{width:62%;height:62%}
+.brand-mark{flex:none;width:40px;height:40px;border-radius:11px;background:#151515 center/cover;border:1px solid rgba(255,106,0,.35);display:grid;place-items:center;color:var(--bk);font-weight:900;font-size:1.3rem;position:relative;overflow:hidden}
 .brand-mark::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55),transparent 70%);transform:translateX(-120%);animation:shine 5s 3s infinite}
 @keyframes shine{25%,100%{transform:translateX(120%)}}
 .brand small{display:block;font-weight:600;font-size:.6rem;letter-spacing:.28em;color:var(--mu);text-transform:uppercase;margin-top:4px}
@@ -355,7 +362,7 @@ header.nav.hide{transform:translateY(-100%)}
 .ig-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent 26%,transparent 55%,rgba(0,0,0,.9))}
 .ig-top{display:flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;color:#fff;min-width:0}
 .ig-top span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ig-av{flex:none;width:28px;height:28px;border-radius:50%;background:var(--or) center/cover;color:var(--bk);display:grid;place-items:center;font-weight:900;font-size:.8rem;box-shadow:0 0 0 2px var(--bk),0 0 0 3.5px var(--or)}
+.ig-av{flex:none;width:28px;height:28px;border-radius:50%;background:var(--bk) center/cover;color:var(--bk);display:grid;place-items:center;font-weight:900;font-size:.8rem;box-shadow:0 0 0 2px var(--bk),0 0 0 3.5px var(--or)}
 .ig-bot{font-size:.8rem;font-weight:600;color:#fff;line-height:1.35}
 .ig-bot span{display:block;margin-top:6px;color:#e6e1da;font-size:.7rem;font-weight:500}
 .ig-type{position:absolute;top:14px;right:14px;width:26px;height:26px;border-radius:8px;background:rgba(0,0,0,.55);display:grid;place-items:center;color:#fff;font-size:.65rem}
@@ -405,6 +412,8 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
 .f-grid ul a{position:relative;color:var(--tx-2);font-size:.9rem;font-weight:500;transition:color .3s}
 .f-grid ul a::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:var(--or);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 .f-grid ul a:hover{color:var(--tx)}.f-grid ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.f-logo{display:block;width:220px;max-width:70%;margin:-34px 0 -30px -26px}
+.f-logo img{width:100%;height:auto}
 .f-about p{color:var(--mu);margin-top:16px;max-width:340px;font-size:.9rem}
 .socials{display:flex;gap:10px;margin-top:20px}
 .socials a{width:46px;height:46px;border-radius:50%;border:1px solid var(--ln);display:grid;place-items:center;transition:background .3s,color .3s,transform .3s}
@@ -531,8 +540,7 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
           <g class="spin"><text class="txt"><textPath href="#pc">E-GRAFİK TASARIM • LOGO • SOSYAL MEDYA • KİMLİK •</textPath></text></g>
           <circle class="track" cx="100" cy="100" r="66"/>
           <circle class="arc" cx="100" cy="100" r="66" stroke-dasharray="414.7" stroke-dashoffset="414.7"/>
-          <rect class="sq" x="70" y="70" width="60" height="60" rx="14"/>
-          <path class="E" d="M114 84H88v32h26M88 100h20"/>
+          <g transform="translate(100 100) scale(.125) translate(-995 -586)"><path class="lgp" d="M995 300L1215 427L1142 468L994 383L818 482L818 605L947 534L947 616L820 687L994 788L1172 688L1043 616L1043 533L1245 645L1245 732L993 872L745 728L745 438Z"/><circle class="lgd" cx="1210" cy="524" r="42"/></g>
         </svg>
       </div>
       <div class="pre-name" aria-hidden="true"></div>
@@ -554,7 +562,7 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
 <header class="nav" id="top">
   <div class="wrap nav-in">
     <a href="#top" class="brand" aria-label="E-Grafik Tasarım ana sayfa">
-      <span class="brand-mark">E</span>
+      <span class="brand-mark"><svg class="lg" viewBox="730 290 530 595" aria-hidden="true"><path d="M995 300L1215 427L1142 468L994 383L818 482L818 605L947 534L947 616L820 687L994 788L1172 688L1043 616L1043 533L1245 645L1245 732L993 872L745 728L745 438Z"/><circle cx="1210" cy="524" r="42"/></svg></span>
       <span>E-Grafik Tasarım<small>Tasarım Stüdyosu</small></span>
     </a>
     <nav aria-label="Ana menü">
@@ -769,19 +777,19 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
       <a class="ig rv" data-cursor="view" href="https://www.instagram.com/e_grafiktasarim/" target="_blank" rel="noopener">
         <img class="media" data-ig="post-0" src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=500&q=70" alt="Sosyal medya post tasarımı" loading="lazy">
         <span class="ig-type" aria-hidden="true">▣</span>
-        <div class="ig-ov"><div class="ig-top"><span class="ig-av">E</span><span>e_grafiktasarim</span></div><div class="ig-bot">Yeni logo çalışması ✦<span>♥ 1.2B · 💬 48</span></div></div></a>
+        <div class="ig-ov"><div class="ig-top"><span class="ig-av"><svg class="lg" viewBox="730 290 530 595" aria-hidden="true"><path d="M995 300L1215 427L1142 468L994 383L818 482L818 605L947 534L947 616L820 687L994 788L1172 688L1043 616L1043 533L1245 645L1245 732L993 872L745 728L745 438Z"/><circle cx="1210" cy="524" r="42"/></svg></span><span>e_grafiktasarim</span></div><div class="ig-bot">Yeni logo çalışması ✦<span>♥ 1.2B · 💬 48</span></div></div></a>
       <a class="ig rv" data-cursor="view" href="https://www.instagram.com/e_grafiktasarim/reels/" target="_blank" rel="noopener">
         <img class="media" data-ig="post-1" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=500&q=70" alt="Reels tasarım içeriği" loading="lazy">
         <span class="ig-type" aria-hidden="true">▶</span>
-        <div class="ig-ov"><div class="ig-top"><span class="ig-av">E</span><span>e_grafiktasarim</span></div><div class="ig-bot">Tasarım süreci<span>▶ 18B izlenme</span></div></div></a>
+        <div class="ig-ov"><div class="ig-top"><span class="ig-av"><svg class="lg" viewBox="730 290 530 595" aria-hidden="true"><path d="M995 300L1215 427L1142 468L994 383L818 482L818 605L947 534L947 616L820 687L994 788L1172 688L1043 616L1043 533L1245 645L1245 732L993 872L745 728L745 438Z"/><circle cx="1210" cy="524" r="42"/></svg></span><span>e_grafiktasarim</span></div><div class="ig-bot">Tasarım süreci<span>▶ 18B izlenme</span></div></div></a>
       <a class="ig rv" data-cursor="view" href="https://www.instagram.com/e_grafiktasarim/" target="_blank" rel="noopener">
         <img class="media" data-ig="post-2" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&q=70" alt="Marka kimliği paylaşımı" loading="lazy">
         <span class="ig-type" aria-hidden="true">▣</span>
-        <div class="ig-ov"><div class="ig-top"><span class="ig-av">E</span><span>e_grafiktasarim</span></div><div class="ig-bot">Kurumsal kimlik teslimi<span>♥ 940 · 💬 31</span></div></div></a>
+        <div class="ig-ov"><div class="ig-top"><span class="ig-av"><svg class="lg" viewBox="730 290 530 595" aria-hidden="true"><path d="M995 300L1215 427L1142 468L994 383L818 482L818 605L947 534L947 616L820 687L994 788L1172 688L1043 616L1043 533L1245 645L1245 732L993 872L745 728L745 438Z"/><circle cx="1210" cy="524" r="42"/></svg></span><span>e_grafiktasarim</span></div><div class="ig-bot">Kurumsal kimlik teslimi<span>♥ 940 · 💬 31</span></div></div></a>
       <a class="ig rv" data-cursor="view" href="https://www.instagram.com/e_grafiktasarim/reels/" target="_blank" rel="noopener">
         <img class="media" data-ig="post-3" src="https://images.unsplash.com/photo-1561070791-36c11767b26a?w=500&q=70" alt="Afiş tasarımı paylaşımı" loading="lazy">
         <span class="ig-type" aria-hidden="true">▶</span>
-        <div class="ig-ov"><div class="ig-top"><span class="ig-av">E</span><span>e_grafiktasarim</span></div><div class="ig-bot">Afiş kurgusu<span>▶ 9.4B izlenme</span></div></div></a>
+        <div class="ig-ov"><div class="ig-top"><span class="ig-av"><svg class="lg" viewBox="730 290 530 595" aria-hidden="true"><path d="M995 300L1215 427L1142 468L994 383L818 482L818 605L947 534L947 616L820 687L994 788L1172 688L1043 616L1043 533L1245 645L1245 732L993 872L745 728L745 438Z"/><circle cx="1210" cy="524" r="42"/></svg></span><span>e_grafiktasarim</span></div><div class="ig-bot">Afiş kurgusu<span>▶ 9.4B izlenme</span></div></div></a>
     </div>
     <div class="ig-cta"><a class="btn btn-p mag-s" href="https://www.instagram.com/e_grafiktasarim/" target="_blank" rel="noopener">Instagram'da Takip Et
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
@@ -834,7 +842,7 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
   <div class="wrap">
     <div class="f-grid">
       <div class="f-about">
-        <a href="#top" class="brand"><span class="brand-mark">E</span><span>E-Grafik Tasarım</span></a>
+        <a href="#top" class="f-logo" aria-label="E-Grafik Tasarım"><img src="logo.png" alt="E-Grafik Tasarım logosu" width="3508" height="2481" loading="lazy"></a>
         <p>Logo, kurumsal kimlik ve sosyal medya yönetiminde markanızın yaratıcı ortağı.</p>
         <div class="socials">
           <a href="https://www.instagram.com/e_grafiktasarim/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
