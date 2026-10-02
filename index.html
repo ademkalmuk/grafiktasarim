@@ -427,19 +427,22 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
 .f-grid ul a{position:relative;color:var(--tx-2);font-size:.9rem;font-weight:500;transition:color .3s}
 .f-grid ul a::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:var(--or);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 .f-grid ul a:hover{color:var(--tx)}.f-grid ul a:hover::after{transform:scaleX(1);transform-origin:left}
-.f-logo{display:block;width:220px;max-width:70%;margin:-34px 0 -30px -26px}
-.f-logo img{width:100%;height:auto}
+.f-logo{display:inline-flex;flex-direction:column;align-items:flex-start;gap:14px}
+.f-logo svg{width:64px;height:auto;fill:var(--or);transition:transform .6s var(--ease)}
+.f-logo:hover svg{transform:rotate(-8deg) scale(1.05)}
+.f-logo .wm{font-size:1.5rem}
 .f-about p{color:var(--mu);margin-top:16px;max-width:340px;font-size:.9rem}
 .socials{display:flex;gap:10px;margin-top:20px}
 .socials a{width:46px;height:46px;border-radius:50%;border:1px solid var(--ln);display:grid;place-items:center;transition:background .3s,color .3s,transform .3s}
 .socials a:hover{background:var(--or);color:var(--bk);transform:translateY(-4px)}
 .socials svg{width:18px;height:18px}
-.f-big{margin:clamp(44px,6vw,80px) 0 26px;font-weight:900;font-size:clamp(2.6rem,12.8vw,11.5rem);line-height:.85;letter-spacing:-.05em;text-align:center;white-space:nowrap;background:linear-gradient(180deg,var(--or) 10%,rgba(255,106,0,.05) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+.f-big{margin:clamp(44px,6vw,80px) 0 26px;font-weight:900;font-size:clamp(2.6rem,12.8vw,11.5rem);line-height:1;padding-bottom:.08em;letter-spacing:-.05em;text-align:center;white-space:nowrap;background:linear-gradient(180deg,var(--or) 10%,rgba(255,106,0,.05) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
 .f-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--ln);font-size:.8rem;color:var(--mu)}
 .kalmuk{display:inline-flex;align-items:center;gap:12px;padding:5px 5px 5px 18px;border:1px solid var(--ln);border-radius:100px;background:var(--bk);color:var(--tx-2);font-weight:600;font-size:.76rem;transition:border-color .3s,transform .3s}
 .kalmuk:hover{border-color:var(--or);transform:translateY(-3px)}
 .kalmuk-logo{display:flex;align-items:center;height:40px;padding:0 16px;border-radius:100px;background:var(--bk-4)}
 .kalmuk-logo img{height:24px;width:auto;mix-blend-mode:screen;filter:invert(1) hue-rotate(180deg) brightness(1.1)}
+.km-txt{font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--tx)}
 .to-top{flex:none;width:46px;height:46px;border-radius:50%;background:var(--or);color:var(--bk);display:grid;place-items:center;font-weight:800;transition:transform .3s}
 .to-top:hover{transform:translateY(-4px)}
 
@@ -857,7 +860,7 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
   <div class="wrap">
     <div class="f-grid">
       <div class="f-about">
-        <a href="#top" class="f-logo" aria-label="E-Grafik Tasarım"><img src="logo.png" alt="E-Grafik Tasarım logosu" width="3508" height="2481" loading="lazy"></a>
+        <a href="#top" class="f-logo" aria-label="E-Grafik Tasarım ana sayfa"><svg viewBox="730 290 530 595" aria-hidden="true"><path d="M995 300L1215 427L1142 468L994 383L818 482L818 605L947 534L947 616L820 687L994 788L1172 688L1043 616L1043 533L1245 645L1245 732L993 872L745 728L745 438Z"/><circle cx="1210" cy="524" r="42"/></svg><span class="wm">e-grafiktasarım<i>.</i></span></a>
         <p>Logo, kurumsal kimlik ve sosyal medya yönetiminde markanızın yaratıcı ortağı.</p>
         <div class="socials">
           <a href="https://www.instagram.com/e_grafiktasarim/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
@@ -873,7 +876,7 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
       <span class="f-copy">© <span id="yr">2026</span> E-Grafik Tasarım. Tüm hakları saklıdır.</span>
       <a class="kalmuk" href="https://kalmukmedia.com.tr" target="_blank" rel="noopener" title="Web tasarım: Kalmuk Media">
         <span>Tasarım & Yazılım</span>
-        <span class="kalmuk-logo"><img src="https://kalmukmedia.com.tr/uploads/site/61fca331-95f7-4238-956e-69867335b5d5.png" alt="Kalmuk Media" loading="lazy" height="24"></span>
+        <span class="kalmuk-logo"><img src="https://kalmukmedia.com.tr/uploads/site/61fca331-95f7-4238-956e-69867335b5d5.png" alt="Kalmuk Media" height="24" onerror="this.replaceWith(Object.assign(document.createElement('b'),{className:'km-txt',textContent:'KALMUK MEDIA'}))"></span>
       </a>
       <a href="#top" class="to-top" aria-label="Yukarı çık">↑</a>
     </div>
