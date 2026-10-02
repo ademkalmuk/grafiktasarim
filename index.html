@@ -270,7 +270,10 @@ header.nav.hide{transform:translateY(-100%)}
 .about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,100px);align-items:center}
 .about-media{position:relative}
 .about-img{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--bk-3)}
-.about-img img{width:100%;height:118%;object-fit:cover;will-change:transform}
+.about-img img{position:relative;z-index:1;width:100%;height:118%;margin-top:-9%;object-fit:cover;will-change:transform}
+.about-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 30% 20%,rgba(255,106,0,.45),transparent 60%),linear-gradient(135deg,#1d1d1d,#0d0d0d)}
+.about-ph span{font-weight:900;font-size:clamp(5rem,12vw,9rem);line-height:1;color:var(--or)}
+.about-ph small{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mu);font-weight:700}
 .about-float{position:absolute;right:-20px;bottom:30px;padding:16px 20px;border-radius:16px;background:var(--bk-2);border:1px solid var(--ln);box-shadow:0 30px 60px -20px #000;max-width:210px}
 .about-float b{display:block;font-size:1.9rem;font-weight:900;line-height:1;color:var(--or)}
 .about-float span{font-size:.78rem;color:var(--tx-2);line-height:1.4;display:block;margin-top:6px}
@@ -652,7 +655,8 @@ footer{position:relative;overflow:hidden;background:var(--bk-2);border-top:1px s
   <div class="wrap about-grid">
     <div class="about-media rv">
       <div class="about-img clip">
-        <img data-par="0.12" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=70" alt="Grafik tasarımcı çalışma masasında renk paletleriyle çalışıyor" loading="lazy" width="900" height="1125">
+        <div class="about-ph" aria-hidden="true"><span>E</span><small>E-Grafik Tasarım</small></div>
+        <img data-par="0.12" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=70" data-fallback="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=70|https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=900&q=70" alt="E-Grafik Tasarım çalışma alanı ve tasarım süreci" width="900" height="1125" decoding="async">
       </div>
       <div class="about-float"><b>7+</b><span>yıllık tasarım ve sosyal medya deneyimi</span></div>
     </div>
@@ -874,6 +878,10 @@ const lerp=(a,b,t)=>a+(b-a)*t,clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 const root=document.documentElement,body=document.body;
 $('#yr').textContent=new Date().getFullYear();
 
+/* ---------- Görsel yüklenemezse yedek URL'ye geç ---------- */
+$$('img[data-fallback]').forEach(im=>{const list=im.dataset.fallback.split('|');const next=()=>{const u=list.shift();if(u)im.src=u;else im.remove()};
+  im.addEventListener('error',next);if(im.complete&&!im.naturalWidth)next()});
+
 /* ---------- Instagram URL'lerini uygula ---------- */
 if(IG.logo)$$('.brand-mark,.ig-av').forEach(m=>{m.textContent='';m.style.backgroundImage=`url("${IG.logo}")`});
 $$('[data-ig]').forEach(el=>{const [k,i]=el.dataset.ig.split('-');const u=(k==='post'?IG.posts:IG.portfolio)[+i];if(!u)return;
@@ -930,8 +938,10 @@ $$('.split').forEach(el=>{
 
 /* ---------- Görünce animasyon ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+  $$('.clip',e.target).forEach(c=>c.classList.add('in'));
   $$('[data-count]',e.target).forEach(count);io.unobserve(e.target)}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-$$('.rv,.split,.clip').forEach(e=>{if(!e.closest('.hero'))io.observe(e)});
+/* .clip öğeleri kendi clip-path'i yüzünden görünmez sayılır; ebeveyni üzerinden açılır */
+$$('.rv,.split').forEach(e=>{if(!e.closest('.hero'))io.observe(e)});
 [['.ig',.08],['.ct',.08],['.about-list li',.07]].forEach(([s,d])=>$$(s).forEach((e,i)=>e.style.transitionDelay=i*d+'s'));
 function count(el){if(el.dataset.done)return;el.dataset.done=1;const t=+el.dataset.count,d=1700,s=performance.now();
   (function f(n){const k=clamp((n-s)/d,0,1);el.textContent=Math.round(t*(1-Math.pow(1-k,4)));if(k<1)requestAnimationFrame(f)})(s)}
